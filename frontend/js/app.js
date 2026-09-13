@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             existingErrors.forEach(error => error.remove());
 
             // Get all inputs that might be required
-            // You can adjust the selector based on the actual form fields once index.html is populated
             const requiredFields = form.querySelectorAll('input[required], textarea[required], select[required]');
 
             requiredFields.forEach(field => {
@@ -36,5 +35,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault();
             }
         });
+    }
+});
+
+// Phase 3: Search and Filter implementation
+document.addEventListener('DOMContentLoaded', () => {
+    // Replace these selectors with the actual IDs/classes used in HTML
+    const searchInput = document.getElementById('searchBar'); 
+    const statusSelect = document.getElementById('statusFilter');
+    const tableBody = document.querySelector('table tbody'); 
+
+    if (searchInput && statusSelect && tableBody) {
+        const filterTable = () => {
+            const searchQuery = searchInput.value.toLowerCase().trim();
+            const statusFilter = statusSelect.value.toLowerCase().trim();
+            
+            // Iterate through all table rows
+            const rows = tableBody.querySelectorAll('tr');
+            
+            rows.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+                
+                // For a more specific status check, you might want to target a specific column:
+                // e.g., const statusCellText = row.querySelector('.status-cell').textContent.toLowerCase();
+                // Here, we're assuming the status text exists somewhere in the row or we check a specific data attribute.
+                // As a generic fallback, we check if the row's text content includes the status, 
+                // or if the status filter is empty/"all"
+                
+                const matchesSearch = rowText.includes(searchQuery);
+                const matchesStatus = statusFilter === '' || statusFilter === 'all' || rowText.includes(statusFilter);
+
+                // Hide rows that do not match both conditions
+                if (matchesSearch && matchesStatus) {
+                    row.style.display = ''; // Show row
+                } else {
+                    row.style.display = 'none'; // Hide row
+                }
+            });
+        };
+
+        // Listen for user input on the search bar
+        searchInput.addEventListener('input', filterTable);
+        
+        // Listen for changes on the status filter dropdown
+        statusSelect.addEventListener('change', filterTable);
     }
 });
