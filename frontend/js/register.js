@@ -1,0 +1,80 @@
+const registerForm =
+    document.getElementById("registerForm");
+
+registerForm.addEventListener(
+    "submit",
+    async (e) => {
+
+        e.preventDefault();
+
+        const full_name =
+            document.getElementById("fullname").value;
+
+        const email =
+            document.getElementById("registerEmail").value;
+
+        const password =
+            document.getElementById("registerPassword").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+
+            alert("Passwords do not match");
+            return;
+        }
+
+        try {
+
+            const response = await fetch(
+                "http://127.0.0.1:8000/users/register",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+                    body: JSON.stringify({
+                        full_name,
+                        email,
+                        password
+                    })
+                }
+            );
+
+            const data =
+                await response.json();
+
+            if (!response.ok) {
+                alert(data.detail);
+                return;
+            }
+
+            alert("Registration Successful! Please login.");
+
+            document.getElementById("registerForm").reset();
+
+            // Close Register Modal
+            document
+                .getElementById("registerModal")
+                .classList.remove("show");
+
+            // Open Login Modal
+            document
+                .getElementById("loginModal")
+                .classList.add("show");
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Cannot connect to server."
+            );
+        }
+
+    }
+);
