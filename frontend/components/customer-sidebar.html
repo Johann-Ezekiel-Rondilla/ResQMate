@@ -1,46 +1,64 @@
-<div class="sidebar">
-
-    <div class="logo">
-        <img src="../assets/logo.png" alt="ResQMate Logo">
-        <h2>ResQMate</h2>
+<aside class="sidebar">
+    <div class="sidebar-header-wrapper"
+        style="display: flex; align-items: center; justify-content: space-between; padding-right: 4px;">
+        <div class="logo" style="padding: 15px 10px; margin-bottom: 10px;">
+            <img src="../assets/logo.png" alt="ResQMate Logo">
+            <h2>ResQMate</h2>
+        </div>
+        <!-- 3 lines Toggle Button -->
+        <button class="toggle-btn" aria-label="Toggle Sidebar"
+            style="background: transparent; border: none; color: #94a3b8; font-size: 1.1rem; cursor: pointer; padding: 8px; border-radius: 8px;">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </div>
 
     <ul class="menu">
-
         <li>
             <a href="dashboard.html">
-                Dashboard
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
             </a>
         </li>
-
         <li>
             <a href="requests.html">
-                My Requests
+                <i class="fa-solid fa-file-lines"></i>
+                <span>My Requests</span>
             </a>
         </li>
-
         <li>
             <a href="request.html">
-                Request Assistance
+                <i class="fa-solid fa-hands-holding-child"></i>
+                <span>Request Assistance</span>
             </a>
         </li>
-
         <li>
             <a href="notification.html">
-                Notifications
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
             </a>
         </li>
-
-        <li>
-            <a href="profile.html">
-                Profile
-            </a>
-        </li>
-
     </ul>
 
-    <div class="logout">
-        <button>Logout</button>
-    </div>
+    <!-- Bottom Section -->
+    <div class="sidebar-bottom">
+        <div class="sidebar-footer-row">
 
-</div>
+            <button class="profile-button">
+                <div class="profile-avatar" id="profileAvatar">S</div>
+
+                <div class="profile-info">
+                    <strong id="profileName">Loading...</strong>
+                    <span id="profileRole">Loading...</span>
+                </div>
+            </button>
+
+            <!-- Logout Button (Moved to Left) -->
+            <div class="logout">
+                <button title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</aside>

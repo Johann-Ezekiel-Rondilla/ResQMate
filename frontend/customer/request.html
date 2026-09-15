@@ -6,92 +6,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ResQMate - Request Assistance</title>
 
-    <link rel="stylesheet" href="../style/sidebar.css">
-    <link rel="stylesheet" href="../style/request.css">
+    <link rel="stylesheet" href="../style/customer-sidebar.css">
+    <link rel="stylesheet" href="../style/customer-request.css">
+    <link rel="stylesheet" href="../style/logout-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Sidebar -->
-    <div id="sidebar-container"></div>
+    <div class="dashboard-container">
 
-    <!-- Main Content -->
-    <main class="main-content">
+        <div id="sidebar-container"></div>
 
-        <div class="page-header">
-            <h1>Request Assistance</h1>
-            <p>Fill out the form below to request disaster assistance.</p>
-        </div>
+        <main class="main-content">
 
-        <div class="request-card">
+            <div class="content-title">
+                <h2>Request Assistance</h2>
+            </div>
 
-            <!-- Categories -->
-            <div class="category-grid">
+            <div class="request-card">
 
-                <div class="category-card active">
-                    🍞
-                    <span>Food</span>
-                </div>
+                <form id="requestForm">
 
-                <div class="category-card">
-                    💧
-                    <span>Water</span>
-                </div>
+                    <div class="form-section">
 
-                <div class="category-card">
-                    🏠
-                    <span>Shelter</span>
-                </div>
+                        <label class="form-label">
+                            Assistance Type <span>*</span>
+                        </label>
 
-                <div class="category-card">
-                    💊
-                    <span>Medicine</span>
-                </div>
+                        <div class="assistance-types">
+
+                            <button type="button" class="assistance-option active" data-type="Food">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </div>
+                                <div class="option-name">Food</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="Water">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-droplet"></i>
+                                </div>
+                                <div class="option-name">Water</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="Shelter">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div class="option-name">Shelter</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="Medicine">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-pills"></i>
+                                </div>
+                                <div class="option-name">Medicine</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="General">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <div class="option-name">General</div>
+                            </button>
+
+                        </div>
+
+                        <input type="hidden" id="assistanceType" name="assistance_type" value="Food">
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <label class="form-label">
+                            Location <span>*</span>
+                        </label>
+
+                        <div class="location-fields">
+
+                            <input type="text" id="barangay" name="barangay" class="form-input" placeholder="Barangay"
+                                required>
+
+                            <input type="text" id="city" name="city" class="form-input" placeholder="City" required>
+
+                            <input type="text" id="province" name="province" class="form-input" placeholder="Province"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <label for="details" class="form-label">
+                            Details <span>*</span>
+                        </label>
+
+                        <textarea id="details" name="details" class="form-textarea" maxlength="1000"
+                            placeholder="Tell us more about your situation..." required></textarea>
+
+                        <div class="character-counter">
+                            <span id="characterCount">0</span>/1000
+                        </div>
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <label for="priority" class="form-label">
+                            Priority Level <span>*</span>
+                        </label>
+
+                        <select id="priority" name="priority" class="form-select" required>
+
+                            <option value="Normal">Normal</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-buttons">
+
+                        <button type="button" class="cancel-button" id="cancelButton">
+                            Clear Form
+                        </button>
+
+                        <button type="submit" class="submit-button">
+                            Submit Request
+                        </button>
+
+                    </div>
+
+                </form>
 
             </div>
 
-            <!-- Form -->
-            <form>
+        </main>
 
-                <div class="form-group">
-                    <label>Location</label>
-                    <input type="text" class="form-control" placeholder="Enter your location">
-                </div>
+    </div>
 
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea class="form-control"
-                        placeholder="Describe your situation and assistance needed..."></textarea>
-                </div>
+    <div id="logout-modal-wrapper"></div>
 
-                <div class="form-group">
-                    <label>Urgency Level</label>
-                    <select class="form-control">
-                        <option>Select urgency level</option>
-                        <option>Low</option>
-                        <option>Medium</option>
-                        <option>High</option>
-                        <option>Critical</option>
-                    </select>
-                </div>
-
-                <div class="button-group">
-                    <button type="reset" class="btn-cancel">
-                        Cancel
-                    </button>
-
-                    <button type="submit" class="btn-submit">
-                        Submit Request
-                    </button>
-                </div>
-
-            </form>
-
-        </div>
-
-    </main>
-
+    <script src="../js/customer-request.js"></script>
     <script src="../components/loadSidebar.js"></script>
+    <script src="../components/logout-modal.js"></script>
 
 </body>
 

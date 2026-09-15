@@ -6,14 +6,14 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f6f9ff;
+    background: #fdf2f2;
     color: #1e293b;
 }
 
 /* NAVBAR */
 
 .navbar {
-    background: #f6f9ff;
+    background: #fdf2f2;
     padding: 20px 8%;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,8 @@ body {
 }
 
 .logo h2 {
-    color: #0d4bd7;
+    color: #991b1b;
+    /* Deep Red */
 }
 
 nav {
@@ -52,16 +53,18 @@ nav a {
 
 .login-btn {
     padding: 10px 24px;
-    border: 1px solid #2563eb;
+    border: 1px solid #EF4444;
+    /* Primary Red */
     background: white;
-    color: #2563eb;
+    color: #EF4444;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .signup-btn {
     padding: 10px 24px;
-    background: #2563eb;
+    background: #EF4444;
+    /* Primary Red */
     color: white;
     border: none;
     border-radius: 10px;
@@ -84,7 +87,8 @@ nav a {
 .hero-text h1 {
     font-size: 58px;
     line-height: 1.1;
-    color: #0b2f8f;
+    color: #7f1d1d;
+    /* Dark Red */
     margin-bottom: 20px;
 }
 
@@ -99,7 +103,8 @@ nav a {
 }
 
 .primary-btn {
-    background: #2563eb;
+    background: #EF4444;
+    /* Primary Red */
     color: white;
     border: none;
     padding: 14px 28px;
@@ -109,8 +114,9 @@ nav a {
 
 .secondary-btn {
     background: white;
-    border: 2px solid #2563eb;
-    color: #2563eb;
+    border: 2px solid #EF4444;
+    /* Primary Red */
+    color: #EF4444;
     padding: 14px 28px;
     border-radius: 30px;
     cursor: pointer;
@@ -130,7 +136,7 @@ nav a {
 
 .features h2 {
     margin-bottom: 40px;
-    color: #0b2f8f;
+    color: #7f1d1d;
 }
 
 .feature-grid {
@@ -169,19 +175,23 @@ nav a {
 }
 
 .blue {
-    background: #2563eb;
+    background: #EF4444;
+    /* Changed accent color to Red */
 }
 
 .green {
-    background: #22c55e;
+    background: #f59e0b;
+    /* Changed to amber/orange variant */
 }
 
 .orange {
-    background: #f97316;
+    background: #dc2626;
+    /* Deep Red */
 }
 
 .purple {
-    background: #8b5cf6;
+    background: #991b1b;
+    /* Dark Maroon */
 }
 
 /* PROCESS */
@@ -192,7 +202,7 @@ nav a {
 }
 
 .process h2 {
-    color: #0b2f8f;
+    color: #7f1d1d;
     margin-bottom: 40px;
 }
 
@@ -209,7 +219,8 @@ nav a {
 .step-circle {
     width: 45px;
     height: 45px;
-    background: #2563eb;
+    background: #EF4444;
+    /* Primary Red */
     color: white;
     border-radius: 50%;
     display: flex;
@@ -235,11 +246,7 @@ nav a {
    RESPONSIVENESS
 ========================== */
 
-
-/* TABLET */
-
 @media (max-width: 1024px) {
-
     .hero {
         gap: 40px;
     }
@@ -260,10 +267,7 @@ nav a {
     .line {
         display: none;
     }
-
 }
-
-/* MOBILE */
 
 @media (max-width: 768px) {
     .navbar {
@@ -340,13 +344,9 @@ nav a {
     .line {
         display: none;
     }
-
 }
 
-/* SMALL PHONES */
-
 @media (max-width: 480px) {
-
     .logo img {
         width: 40px;
     }
@@ -360,5 +360,4 @@ nav a {
         padding: 7px 12px;
         font-size: 12px;
     }
-
 }

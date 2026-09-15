@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResQMate - Notifications</title>
+
+    <link rel="stylesheet" href="../style/customer-sidebar.css">
+    <link rel="stylesheet" href="../style/customer-notification.css">
+    <link rel="stylesheet" href="../style/logout-modal.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+
+            <div class="content-title">
+                <h2>Notifications</h2>
+                <p>Stay updated with your assistance requests.</p>
+            </div>
+
+            <div class="notification-card">
+
+                <div class="notification-header">
+                    <div>
+                        <h3>Recent Notifications</h3>
+                        <p>Updates about your assistance requests.</p>
+                    </div>
+
+                    <button id="markAllRead" class="mark-read-button">
+                        Mark All as Read
+                    </button>
+                </div>
+
+                <div id="notificationList" class="notification-list">
+
+                    <div class="loading-message">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        Loading notifications...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div id="logout-modal-wrapper"></div>
+
+    <script src="../components/loadSidebar.js"></script>
+    <script src="../components/logout-modal.js"></script>
+    <script src="../js/notification.js"></script>
+
+</body>
+
+</html>
