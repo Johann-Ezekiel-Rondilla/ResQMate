@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQMate - My Requests</title>
+
+    <link rel="stylesheet" href="../style/customer-requests.css">
+    <link rel="stylesheet" href="../style/customer-sidebar.css">
+    <link rel="stylesheet" href="../style/logout-modal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Container (Loaded via JS) -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-title">
+                <h1>My Requests</h1>
+                <p>Track the status of your assistance requests.</p>
+            </div>
+
+            <div class="table-card">
+                <table class="requests-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="req-id">#0012</td>
+                            <td>Food</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>Sept 10, 2026</td>
+                        </tr>
+                        <tr>
+                            <td class="req-id">#0011</td>
+                            <td>Water</td>
+                            <td><span class="status-badge approved">Approved</span></td>
+                            <td>Sept 9, 2026</td>
+                        </tr>
+                        <tr>
+                            <td class="req-id">#0010</td>
+                            <td>Shelter</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>Sept 8, 2026</td>
+                        </tr>
+                        <tr>
+                            <td class="req-id">#0009</td>
+                            <td>Medicine</td>
+                            <td><span class="status-badge processing">Processing</span></td>
+                            <td>Sept 7, 2026</td>
+                        </tr>
+                        <tr>
+                            <td class="req-id">#0008</td>
+                            <td>Food</td>
+                            <td><span class="status-badge approved">Approved</span></td>
+                            <td>Sept 6, 2026</td>
+                        </tr>
+                        <tr>
+                            <td class="req-id">#0007</td>
+                            <td>Water</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>Sept 5, 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="../components/loadSidebar.js"></script>
+    <script src="../components/logout-modal.js"></script>
+    <script src="../js/customer-requests.js"></script>
+
+</body>
+
+</html>

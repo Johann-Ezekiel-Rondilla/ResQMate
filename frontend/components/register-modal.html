@@ -1,0 +1,82 @@
+<div class="modal" id="registerModal">
+
+    <div class="register-container">
+
+        <!-- Left Side -->
+        <div class="register-left">
+
+            <div class="overlay">
+
+                <div class="brand">
+                </div>
+
+                <div class="register-left-content">
+
+                    <h1>
+                        Join The
+                        ResQMate
+                        Community
+                    </h1>
+
+                    <p>
+                        Be part of a community that helps and
+                        supports each other during times of crisis.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="register-right">
+
+            <span class="close-register">&times;</span>
+
+            <h2>Create Your Account</h2>
+
+            <p class="subtitle">
+                Fill in your details to get started.
+            </p>
+
+            <div id="registerError" class="error-alert"></div>
+
+            <form id="registerForm">
+
+                <label>Full Name</label>
+                <input type="text" id="fullname" placeholder="Juan Dela Cruz" required>
+
+                <label>Email Address</label>
+                <input type="email" id="registerEmail" placeholder="you@example.com" required>
+
+                <div class="register-password-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="registerPassword" placeholder="••••••••" required>
+                    <i class="fa-solid fa-eye register-toggle-password toggle-password"
+                        data-target="registerPassword"></i>
+                </div>
+
+                <div class="register-password-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                    <i class="fa-solid fa-eye register-toggle-password toggle-password"
+                        data-target="confirmPassword"></i>
+                </div>
+
+                <button type="submit" class="register-btn">
+                    Register
+                </button>
+
+            </form>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="#" id="openLoginLink">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

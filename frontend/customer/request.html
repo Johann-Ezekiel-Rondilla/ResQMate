@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQMate - Request Assistance</title>
+
+    <link rel="stylesheet" href="../style/customer-sidebar.css">
+    <link rel="stylesheet" href="../style/customer-request.css">
+    <link rel="stylesheet" href="../style/logout-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+
+            <div class="content-title">
+                <h2>Request Assistance</h2>
+            </div>
+
+            <div class="request-card">
+
+                <form id="requestForm">
+
+                    <div class="form-section">
+
+                        <label class="form-label">
+                            Assistance Type <span>*</span>
+                        </label>
+
+                        <div class="assistance-types">
+
+                            <button type="button" class="assistance-option active" data-type="Food">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </div>
+                                <div class="option-name">Food</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="Water">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-droplet"></i>
+                                </div>
+                                <div class="option-name">Water</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="Shelter">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div class="option-name">Shelter</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="Medicine">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-pills"></i>
+                                </div>
+                                <div class="option-name">Medicine</div>
+                            </button>
+
+                            <button type="button" class="assistance-option" data-type="General">
+                                <div class="option-icon">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <div class="option-name">General</div>
+                            </button>
+
+                        </div>
+
+                        <input type="hidden" id="assistanceType" name="assistance_type" value="Food">
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <label class="form-label">
+                            Location <span>*</span>
+                        </label>
+
+                        <div class="location-fields">
+
+                            <input type="text" id="barangay" name="barangay" class="form-input" placeholder="Barangay"
+                                required>
+
+                            <input type="text" id="city" name="city" class="form-input" placeholder="City" required>
+
+                            <input type="text" id="province" name="province" class="form-input" placeholder="Province"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <label for="details" class="form-label">
+                            Details <span>*</span>
+                        </label>
+
+                        <textarea id="details" name="details" class="form-textarea" maxlength="1000"
+                            placeholder="Tell us more about your situation..." required></textarea>
+
+                        <div class="character-counter">
+                            <span id="characterCount">0</span>/1000
+                        </div>
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <label for="priority" class="form-label">
+                            Priority Level <span>*</span>
+                        </label>
+
+                        <select id="priority" name="priority" class="form-select" required>
+
+                            <option value="Normal">Normal</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-buttons">
+
+                        <button type="button" class="cancel-button" id="cancelButton">
+                            Clear Form
+                        </button>
+
+                        <button type="submit" class="submit-button">
+                            Submit Request
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div id="logout-modal-wrapper"></div>
+
+    <script src="../js/customer-request.js"></script>
+    <script src="../components/loadSidebar.js"></script>
+    <script src="../components/logout-modal.js"></script>
+
+</body>
+
+</html>

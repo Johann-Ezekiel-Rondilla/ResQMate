@@ -40,7 +40,8 @@ class AssistanceRequest(Base):
         Enum(
             "low",
             "medium",
-            "high"
+            "high",
+            "critical"
         ),
         default="medium"
     )
