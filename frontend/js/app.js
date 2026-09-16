@@ -81,3 +81,42 @@ document.addEventListener('DOMContentLoaded', () => {
         statusSelect.addEventListener('change', filterTable);
     }
 });
+
+// Phase 3: AJAX Form Submission
+document.addEventListener('DOMContentLoaded', () => {
+    const assistanceForm = document.getElementById('assistance-form');
+    
+    if (assistanceForm) {
+        assistanceForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            // Package the input values into a JSON object
+            const payload = {
+                category: assistanceForm.elements['category']?.value || document.getElementById('category')?.value,
+                location: assistanceForm.elements['location']?.value || document.getElementById('location')?.value,
+                priority: assistanceForm.elements['priority']?.value || document.getElementById('priority')?.value,
+                details: assistanceForm.elements['details']?.value || document.getElementById('details')?.value
+            };
+            
+            try {
+                const response = await fetch('http://127.0.0.1:8000/requests/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (response.ok) {
+                    alert('Request submitted successfully!');
+                    assistanceForm.reset(); // Optional: reset form after success
+                } else {
+                    alert('Failed to submit request. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('An error occurred while submitting the request.');
+            }
+        });
+    }
+});
